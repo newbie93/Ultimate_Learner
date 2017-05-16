@@ -1,3 +1,9 @@
+/*
+ * Hello
+ *
+ */
+
+
 #include"linked_list_def.h"
 
 int list_to_int(struct Node*head)
