@@ -1,9 +1,32 @@
+/*
+ *      linked_list_def.h
+ *
+ *      This header file, defines the structure used for Linked List, and also
+ *      Some important functions to go with it, eg. insertion, removal, search, reversal etc.
+ *
+ *      Written by- Riju Ghosh | Ultimate_Learner | www.rijughosh.com | mail@rijughosh.com
+ */
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
 
+/*
+ *      This is the basic structure of the Node
+ *      Contains a data part and a pointer to the next node
+ *      The data is of type integer.
+ */
 struct Node{int data;struct Node*next;}Node;
 
+/*
+ *      The search function takes the head of the list and the
+ *      data to be searched, and returns a pointer of struct Node
+ *      Let the returned struct Node* be ptr
+ *      if data is not present: ptr=NULL
+ *      if data is in the head: ptr->next=NULL
+ *      if data is any other node: (ptr->next)=prev node of the target
+ */
 struct Node* search(struct Node*head,int data)
 {
 	assert(head);
@@ -30,7 +53,7 @@ struct Node* search(struct Node*head,int data)
 
 struct Node* del_node(struct Node**head,int data)
 {
-	assert(*head);	
+	assert(*head);
 	struct Node*temp,*srch=search(*head,data);
 	if(srch==NULL)
 		return NULL;
@@ -55,7 +78,9 @@ void display(struct Node*head)
 	puts("");
 }
 
-
+/*
+ *      Node is inserted in the beginning
+ */
 void insert_first(struct Node**head,int data)
 {
 	struct Node*temp=(struct Node*)malloc(sizeof(struct Node));
@@ -64,6 +89,9 @@ void insert_first(struct Node**head,int data)
 	*head=temp;
 }
 
+/*
+ *      Node is inserted at the end
+ */
 void insert_end(struct Node**head,int data)
 {
 	struct Node*temp=(struct Node*)malloc(sizeof(struct Node));
@@ -80,6 +108,9 @@ void insert_end(struct Node**head,int data)
 	p->next=temp;
 }
 
+/*
+ *      Node is inserted before a target
+ */
 int insert_before(struct Node**head,int tar,int val)
 {
 	struct Node*srch=search(*head,tar);
@@ -98,6 +129,9 @@ int insert_before(struct Node**head,int tar,int val)
 	return 1;
 }
 
+/*
+ *      Node is inserted after a target
+ */
 int insert_after(struct Node**head,int tar,int val)
 {
 	struct Node*srch=search(*head,tar);
@@ -116,6 +150,9 @@ int insert_after(struct Node**head,int tar,int val)
 	return 1;
 }
 
+/*
+ *      list is reversed
+ */
 void rev(struct Node**head)
 {
 	if(*head==NULL || (*head)->next==NULL)
@@ -132,39 +169,5 @@ void rev(struct Node**head)
 	q->next=p;
 	*head=q;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

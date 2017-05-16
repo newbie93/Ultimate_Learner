@@ -1,3 +1,11 @@
+/*
+ *      linked_list_test.c
+ *
+ *      This file is written to test all the functions written in linked_list_def.h
+ *
+ *      Written by- Riju Ghosh | Ultimate_Learner | www.rijughosh.com | mail@rijughosh.com
+ */
+
 #include "linked_list_def.h"
 
 int main()
@@ -17,6 +25,8 @@ int main()
 	del_node(&head,-2);
 	del_node(&head,5);
 	del_node(&head,2);
+	display(head);
+	rev(&head);
 	display(head);
 	return 0;
 }
