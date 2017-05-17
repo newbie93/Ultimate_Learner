@@ -59,7 +59,7 @@ See also the list of [contributors](https://github.com/newbie93/Ultimate_Learner
 
 ## License
 
-This project is licensed under the MIT License.
+All are Free to reuse the code(s), in the same form or other.
 
 ## Acknowledgments
 
