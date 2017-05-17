@@ -1,8 +1,8 @@
 # CONTENTS
 
 
-    ## Linked List
-	Linked_List
+##	 Linked List
+	 Linked_List
 
 		### Linked List Definintion
 		LINKED_LIST_HEADER
