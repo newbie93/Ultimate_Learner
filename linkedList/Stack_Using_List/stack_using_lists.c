@@ -7,7 +7,7 @@
  *	Written by- Riju Ghosh | Ultimate_Learner | www.rijughosh.com | mail@rijughosh.com
  */
 
-#include"linked_list_def.h"
+#include"../Linked_List_Header/linked_list_def.h"
 
 
 /*
