@@ -12,12 +12,18 @@
 #include<stdlib.h>
 #include<assert.h>
 
+
+
+
 /*
  *      This is the basic structure of the Node
  *      Contains a data part and a pointer to the next node
  *      The data is of type integer.
  */
 struct Node{int data;struct Node*next;}Node;
+
+
+
 
 /*
  *      The search function takes the head of the list and the
@@ -51,6 +57,12 @@ struct Node* search(struct Node*head,int data)
 }
 
 
+
+
+/*
+ *	This function searces for the data to be removed and removes the
+ *	Node. It uses search() to search for the data to be removed.
+ */
 struct Node* del_node(struct Node**head,int data)
 {
 	assert(*head);
@@ -68,6 +80,12 @@ struct Node* del_node(struct Node**head,int data)
 	return temp;
 }
 
+
+
+
+/*
+ *	This function is used to display the entire list.
+ */
 void display(struct Node*head)
 {
 	while(head!=NULL)
@@ -77,6 +95,9 @@ void display(struct Node*head)
 	}
 	puts("");
 }
+
+
+
 
 /*
  *      Node is inserted in the beginning
@@ -88,6 +109,23 @@ void insert_first(struct Node**head,int data)
 	temp->next=*head;
 	*head=temp;
 }
+
+
+
+
+/*
+ *      Remove first Node
+ */
+struct Node* rem_first(struct Node**head)
+{
+	assert(*head);
+	struct Node*p=*head;
+	*head=(*head)->next;
+	return p;
+}
+
+
+
 
 /*
  *      Node is inserted at the end
@@ -107,6 +145,31 @@ void insert_end(struct Node**head,int data)
 		p=p->next;
 	p->next=temp;
 }
+
+
+
+
+/*
+ *      removing Node from the end
+ */
+struct Node* rem_end(struct Node**head)
+{
+	assert(*head);
+	struct Node*p=*head,*temp;
+	if(p->next==NULL)
+	{
+		*head=NULL;
+		return p;
+	}
+	while((p->next)->next!=NULL)
+		p=p->next;
+	temp=p->next;
+	p->next=NULL;
+	return temp;
+}
+
+
+
 
 /*
  *      Node is inserted before a target
@@ -129,6 +192,9 @@ int insert_before(struct Node**head,int tar,int val)
 	return 1;
 }
 
+
+
+
 /*
  *      Node is inserted after a target
  */
@@ -149,6 +215,9 @@ int insert_after(struct Node**head,int tar,int val)
 	((srch->next)->next)->next=temp;
 	return 1;
 }
+
+
+
 
 /*
  *      list is reversed
@@ -171,3 +240,14 @@ void rev(struct Node**head)
 }
 
 
+
+
+/*
+ *	Finds out whether a list is empty
+ */
+ int is_list_empty(struct Node*head)
+ {
+	 if(head==NULL)
+	 	return 1; // yes, list is empty
+	return 0; // No, list is NOT Empty
+ }
