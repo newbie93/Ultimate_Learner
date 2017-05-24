@@ -12,6 +12,9 @@
 #include<stdio.h>
 #include<math.h>
 
+
+/*      returns the position of the target, if found else -1
+*/
 int jump_search(int*a,int n,int tar)
 {
     int i,j,m=sqrt(n);// m is the block size
