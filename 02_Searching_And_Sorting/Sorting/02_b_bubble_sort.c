@@ -1,4 +1,15 @@
+/*
+        02_b_bubble_sort.c
+
+        here bubble sort has been implemented.
+        Its the simplest of all the comparision based sorts.
+        Where we just compare between elements and swap, till
+        we move the highest in every round to the end of our
+        current unsorted segment of the array.
+*/
+
 #include<stdio.h>
+
 
 void bubble_sort(int*a,int n)
 {

@@ -1,3 +1,14 @@
+
+/*
+        02_a_selection_sort.c
+
+        Here we have implemented selection sort.
+        the idea behind this is fairly simple.
+        We just select the highest or lowest element
+        at every turn and swap it at the end or beginning
+        of the current unsorted array segment.
+*/
+
 #include<stdio.h>
 
 void selection_sort(int*a,int n)

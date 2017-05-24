@@ -1,3 +1,15 @@
+/*
+        02_c_insertion_sort.c
+
+        Here insertion sort has been implemented.
+
+        the idea behind insertion sort is just like
+        arranging a pack of cards in order.
+        We take one card at a time and shift it to the
+        left in its correct position, considering the left
+        is already sorted.
+*/
+
 #include<stdio.h>
 
 void insertion_sort(int*a,int n)

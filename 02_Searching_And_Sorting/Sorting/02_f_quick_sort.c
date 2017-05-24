@@ -8,6 +8,13 @@
 
 #include<stdio.h>
 
+/*
+        partition function actually, puts a pivot,
+        the last element is considered as the pivot, to its correct
+        position, and shifts all the elements lesser than it to
+        its left, and all the ones greater than it to its right,
+        and returns the position of the pivot.
+*/
 int partition(int*a,int lb,int ub)
 {
     int i=lb-1,j=lb,pivot=a[ub],temp;

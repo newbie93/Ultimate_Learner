@@ -1,6 +1,23 @@
+/*
+        02_e_heap_sort.c
+
+        this is the implementation of the heap sort
+        algorithm, the idea over here is to create a heap
+        and manipulate it to get the sorted array.
+
+        the heap over here is implemented as an array.
+*/
+
 #include<stdio.h>
 
 
+/*
+        this function, heapify takes the array 'a', the length of
+        the array 'n', the position to be heapified 'i', it considers
+        the sub trees originating from that index(left and right children)
+        as heaps, and makes the complete tree as a heap, by putting
+        the root value at its correct position.
+*/
 void heapify(int*a,int n,int i)
 {
     if(i*2>n)
@@ -19,6 +36,9 @@ void heapify(int*a,int n,int i)
     }
 }
 
+/*
+        Given an array, this function converts it to a heap.
+*/
 void make_heap(int*a,int n)
 {
     int i;
@@ -26,6 +46,9 @@ void make_heap(int*a,int n)
         heapify(a,n,i);
 }
 
+/*
+        This is where sorting takes place.
+*/
 void heap_sort(int*a,int n)
 {
     make_heap(a,n);
