@@ -61,8 +61,14 @@ double max_profit(double*profit,double*wt,int n,double capacity)
         temp[i][1]=wt[i];
     }
     quick_sort(temp,0,n-1);
+
+    /*
+
     for(i=0;i<n;i++)
         printf("%lf %lf -> %lf\n",temp[i][0],temp[i][1],(temp[i][0]/temp[i][1]));
+
+    */
+
     while(capacity>0.0 && ptr<n)
     {
         if(temp[ptr][1]>=capacity)
